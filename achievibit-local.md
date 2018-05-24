@@ -51,10 +51,22 @@ Create an account at https://ngrok.com/ so you can connect your local server to 
 
 ## Getting Started
 
-1. clone achievibit locally (we prefer using [ungit](https://github.com/FredrikNoren/ungit))
+1. clone achievibit locally (we prefer using [ungit](https://github.com/FredrikNoren/ungit) or [gitkraken](https://www.gitkraken.com/))
 2. run `npm install` to install all dependencies
-3. run the following command, replacing all the urls we got in the **prerequisites** step `node index.js --databaseUrl "<mongodb-url>" --ngrokToken "<ngrok-token>"`
->You can also set global variables with the same names to set those permenantly. In Unixy environments: `export ngrokToken="<ngrok-token>"` || In Windows **powershell**: `$env:ngrokToken="<ngrok-token>"`
+3. Now we need to run achievibit. achievibit looks for variables in the following order:
+   1. Command-line arguments
+   2. Environment variables
+   3. A file located at the root of the project called `privateConfig.json`
+   You can run the command line with the `--savePrivate` argument, which will save the `privateConfig.json` file locally for you with the params you passed.
+   Run the following command, replacing all the urls we got in the **prerequisites** step:
+   ```shell
+   node index.js --databaseUrl "<mongodb-url>" --ngrokToken "<ngrok-token>"
+   ```
+   If you chose to run locally without a database, use the following command:
+   ```shell
+   node index.js --testDB --ngrokToken "<ngrok-token>"
+   ```
+   > To set global variables: In Unixy environments: `export ngrokToken="<ngrok-token>"` || In Windows **powershell**: `$env:ngrokToken="<ngrok-token>"`
 
 4. if everything worked, you should see the `achievibit` logo, and an **ngrok url** under it.
 5. follow the instructions in the [`README.MD`](/README.MD) file to connect a test repository to your local achievibit (replace the url with your ngrok url). Make sure **Content type** is set to **application\json**
