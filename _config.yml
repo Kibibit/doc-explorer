@@ -1,2 +1,4 @@
 remote_theme: Kibibit/bulma-theme
 name: kibibit doc explorer
+plugins:
+   - jekyll-spark
