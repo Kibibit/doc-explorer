@@ -32,13 +32,13 @@ to run achievibit (locally or otherwise), you need three main things:
 ## Setting up a real database (optional)
 
 1. Creating a `MongoDB` database. You can use https://mlab.com/ to create one in the cloud.
-If you're using `mlab`, you need to create a database, and then create a database user.
-After creating a database, click on Users**-->**Add database user
-![Users-->Add database user](/screenshots/create-db-user.png)
+   If you're using `mlab`, you need to create a database, and then create a database user.
+   After creating a database, click on Users**-->**Add database user
+   ![Users-->Add database user](/screenshots/create-db-user.png)
 
-Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
+   Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
 
-![mongodb url](/screenshots/mongodb-url.png)
+   ![mongodb url](/screenshots/mongodb-url.png)
 
 ## Run Locally and test achievements
 
