@@ -29,34 +29,27 @@ to run achievibit (locally or otherwise), you need three main things:
 2. achievibit's server - pretty self explanatory
 3. a static public ip address - in order to connect achievibit to a github repository, you need to have a **url** you can paste into your webhook. On production, this is handled by our heroku hosting. To generate a static url, we use `ngrok` locally.
 
-## Setting up a real database (optional)
+## Prerequisites
 
-1. Creating a `MongoDB` database. You can use https://mlab.com/ to create one in the cloud.
-   If you're using `mlab`, you need to create a database, and then create a database user.
-   After creating a database, click on Users**-->**Add database user
-   ![Users-->Add database user](/screenshots/create-db-user.png)
+### Setting up a real database (optional)
 
-   Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
+Creating a `MongoDB` database. You can use https://mlab.com/ to create one in the cloud.
+If you're using `mlab`, you need to create a database, and then create a database user.
+After creating a database, click on Users**-->**Add database user
+![Users-->Add database user](/screenshots/create-db-user.png)
 
-   ![mongodb url](/screenshots/mongodb-url.png)
+Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
 
-## Run Locally and test achievements
+![mongodb url](/screenshots/mongodb-url.png)
 
-To test your achievements locally, you need do the following:
+### Setting up a static url
 
-### Prerequisites
-1. Creating a `MongoDB` database. You can use [mlab.com](https://mlab.com/) to create one in the cloud.
-   If you're using `mlab`, you need to create a database, and then create a database user.
-   After creating a database, click on Users**-->**Add database user
-   ![Users-->Add database user](/screenshots/create-db-user.png)
-   Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
-   ![mongodb url](/screenshots/mongodb-url.png)
-
-2. Create an account at https://ngrok.com/ so you can connect your local server to a **GitHub Repository**
+Create an account at https://ngrok.com/ so you can connect your local server to a **GitHub Repository**
 > you'll need the **ngrok token**:
-![ngrok token](/screenshots/ngrok-token.png)
+>
+> ![ngrok token](/screenshots/ngrok-token.png)
 
-### Getting started
+## Getting Started
 
 1. clone achievibit locally (we prefer using [ungit](https://github.com/FredrikNoren/ungit))
 2. run `npm install` to install all dependencies
