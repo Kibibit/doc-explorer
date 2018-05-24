@@ -43,12 +43,12 @@ Now, go to your database homepage, and copy the database url. you need to enter 
 To test your achievements locally, you need do the following:
 
 ### Prerequisites
-1. Creating a `MongoDB` database. You can use https://mlab.com/ to create one in the cloud.
-If you're using `mlab`, you need to create a database, and then create a database user.
-After creating a database, click on Users**-->**Add database user
-![Users-->Add database user](/screenshots/create-db-user.png)
-Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
-![mongodb url](/screenshots/mongodb-url.png)
+1. Creating a `MongoDB` database. You can use [mlab.com](https://mlab.com/) to create one in the cloud.
+   If you're using `mlab`, you need to create a database, and then create a database user.
+   After creating a database, click on Users**-->**Add database user
+   ![Users-->Add database user](/screenshots/create-db-user.png)
+   Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
+   ![mongodb url](/screenshots/mongodb-url.png)
 
 2. Create an account at https://ngrok.com/ so you can connect your local server to a **GitHub Repository**
 > you'll need the **ngrok token**:
