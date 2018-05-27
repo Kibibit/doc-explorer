@@ -36,12 +36,14 @@ to run achievibit (locally or otherwise), you need three main things:
 This project is run on `node.js`. install node.js using [their site](https://nodejs.org/en/).
 Besides that, nothing is required.
 
-### Setting up database
+### Setting up a database
 
 There are 3 options for running achievibit with a database:
-- locally run mongoDB
-- mongoDB cloud service
-- mock mongoDB
+- [locally run mongoDB](#locally-run-mongodb)
+- [mongoDB cloud service](#mongodb-cloud-service)
+- [mock mongoDB](#mock-mongodb)
+
+You can follow whichever you want, but the ocally run mongoDB is recommended since it's pretty easy to set-up and it tests your code E2E instead of using a mock DB
 
 #### Locally Run MongoDB
 
@@ -57,21 +59,6 @@ The easiest way to do that, is to use **docker**.
 5. At this point, you should have a MongoDB instance listening on port 27017. Its data is stored in ~/data directory of the docker host.
 6. your mongoDB uri is `localhost/achievibit`
 7. If you want a visual UI to see the data in your mongoDB, your can install mongoUI (`npm i -g mongoui`) and run it (`mongoui`)
-
-#### MongoDB cloud service **(recommended)**
-
-You can use https://mlab.com/ to create one in the cloud.
-If you're using `mlab`, you need to create a database, and then create a database user.
-After creating a database, click on Users**-->**Add database user
-![Users-->Add database user](/screenshots/create-db-user.png)
-
-Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
-
-![mongodb url](/screenshots/mongodb-url.png)
-
-#### Mock mongoDB
-
-instead of running against a real DB, you can use our tests' mock DB with the cli param `--testDB`. This is less recommended since it means you don't test everything E2E. But it's the quickest method
 
 ### Setting up a static url
 
@@ -123,3 +110,37 @@ See [Supported Params](#supported-params) for more info
 ## Running tests (WIP)
 
 Currently, only unit-tests are implemented. To run them locally, run `npm test`
+
+
+## DataBase Appendix
+
+#### Locally Run MongoDB
+
+The easiest way to do that, is to use **docker**.
+
+1. [Install docker](https://docs.docker.com/install/)
+2. Check that docker is installed by running `docker --version` in your command line
+3. Create a folder on your machine in order to use that folder for the DB: `mkdir ~/data`
+4. MongoDB conveniently provides us with an [official container](https://registry.hub.docker.com/_/mongo/):
+   ```shell
+   sudo docker run -d -p 27017:27017 -v ~/data:/data/db mongo
+   ```
+5. At this point, you should have a MongoDB instance listening on port 27017. Its data is stored in ~/data directory of the docker host.
+6. your mongoDB uri is `localhost/achievibit`
+7. If you want a visual UI to see the data in your mongoDB, your can install mongoUI (`npm i -g mongoui`) and run it (`mongoui`)
+
+#### MongoDB cloud service
+
+You can use https://mlab.com/ to create one in the cloud.
+If you're using `mlab`, you need to create a database, and then create a database user.
+After creating a database, click on Users **-->** Add database user
+
+![Users-->Add database user](/screenshots/create-db-user.png)
+
+Now, go to your database homepage, and copy the database url. you need to enter your database username and password (**NOT YOUR MLAB ACCOUNT!**)
+
+![mongodb url](/screenshots/mongodb-url.png)
+
+#### Mock mongoDB
+
+instead of running against a real DB, you can use our tests' mock DB with the cli param `--testDB`. This is less recommended since it means you don't test everything E2E. But it's the quickest method
