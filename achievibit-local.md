@@ -24,10 +24,10 @@ Based on [Jordi Boggiano](https://github.com/Seldaek)'s [blog post](https://seld
 
 to run achievibit (locally or otherwise), you need three main things:
 
-1. a database - achievibit expects to write and read data from a mongodb database.
+1. **a database** - achievibit expects to write and read data from a mongodb database.
    You can either create a real mongoDB, or use `monkey.js` to create a mock DB to run locally
-2. achievibit's server - pretty self explanatory
-3. a static public ip address - in order to connect achievibit to a github repository, you need to have a **url** you can paste into your webhook. On production, this is handled by our heroku hosting. To generate a static url, we use `ngrok` locally.
+2. **achievibit's server** - pretty self explanatory
+3. **a static public ip address** - in order to connect achievibit to a github repository, you need to have a **url** you can paste into your webhook. On production, this is handled by our heroku hosting. To generate a static url, we use `ngrok` locally. This is done automatically when you run the server with the `--ngrok` command line param.
 
 ## Prerequisites
 
@@ -39,13 +39,13 @@ Besides that, nothing is required.
 ### Setting up a database
 
 There are 3 options for running achievibit with a database:
-- [locally run mongoDB](#locally-run-mongodb)
+- [run mongoDB locally](#run-mongodb-locally)
 - [mongoDB cloud service](#mongodb-cloud-service)
 - [mock mongoDB](#mock-mongodb)
 
 You can follow whichever you want, but the ocally run mongoDB is recommended since it's pretty easy to set-up and it tests your code E2E instead of using a mock DB
 
-#### Locally Run MongoDB
+#### Run MongoDB Locally
 
 The easiest way to do that, is to use **docker**.
 
@@ -60,13 +60,6 @@ The easiest way to do that, is to use **docker**.
 6. your mongoDB uri is `localhost/achievibit`
 7. If you want a visual UI to see the data in your mongoDB, your can install mongoUI (`npm i -g mongoui`) and run it (`mongoui`)
 
-### Setting up a static url
-
-Create an account at https://ngrok.com/ so you can connect your local server to a **GitHub Repository**
-> you'll need the **ngrok token**:
->
-> ![ngrok token](/screenshots/ngrok-token.png)
-
 ## Getting Started
 
 1. clone achievibit locally (we prefer using [ungit](https://github.com/FredrikNoren/ungit) or [gitkraken](https://www.gitkraken.com/))
@@ -78,11 +71,15 @@ Create an account at https://ngrok.com/ so you can connect your local server to 
    You can run the command line with the `--savePrivate` argument, which will save the `privateConfig.json` file locally for you with the params you passed.
    Run the following command, replacing all the urls we got in the **prerequisites** step:
    ```shell
-   node index.js --databaseUrl "<mongodb-url>" --ngrokToken "<ngrok-token>"
+   node index.js --databaseUrl "<mongodb-url>" --ngrok
+   ```
+   If you chose to [run mongoDB locally](#run-mongodb-locally), use the following command:
+   ```shell
+   node index.js --databaseUrl locahost/achievibit --ngrok
    ```
    If you chose to run locally without a database, use the following command:
    ```shell
-   node index.js --testDB --ngrokToken "<ngrok-token>"
+   node index.js --testDB --ngrok
    ```
    > To set global variables: In Unixy environments: `export ngrokToken="<ngrok-token>"` || In Windows **powershell**: `$env:ngrokToken="<ngrok-token>"`
 
@@ -114,7 +111,7 @@ Currently, only unit-tests are implemented. To run them locally, run `npm test`
 
 ## DataBase Appendix
 
-#### Locally Run MongoDB
+#### Run MongoDB Locally
 
 The easiest way to do that, is to use **docker**.
 
