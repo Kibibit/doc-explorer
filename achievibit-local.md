@@ -81,22 +81,14 @@ See [Supported Params](#supported-params) for more info
 
 ## Supported params
 `achievibit` supports the following params:
-- `--databaseUrl` (required)
-- `--ngrokToken` (required)
+- `--databaseUrl` **OR** `--testDB` (required) - either set-up achievibit against a real DB or a mock DB
+- `--ngrokToken` (required) - needed in order to connect to GitHub for testing
 - `--logsUsername` - set a username to the logs
 - `--logsPassword` - set a password to the logs (without the username, this is ignored)
-- `--stealth` - if you don't want to print the logo in the terminal
+- `--stealth` - if you don't want to print the logo in the terminal. Useful when running in `watch` mode and you don't want the server to print the achievibit logo each time it restarts
 - `--githubUser` - `GitHub` user to make requests with
 - `--githubPassword` - `GitHub` password to make requests with
 
 ## Running tests (WIP)
 
-`gulp test` will run
-- unit tests
-- REST-interface tests
-- clicktests.
-
-`gulp test:unittest` only runs the tests in the test/ folder, `gulp test:clicktest` runs only the tests in the clicktests/ folder. Install mocha (`npm install -g mocha`) to run specific tests in the test folder and get better stack traces: `mocha test/spec.git-api.js`.
-
-{% Napolean %}
-
+Currently, only unit-tests are implemented. To run them locally, run `npm test`
