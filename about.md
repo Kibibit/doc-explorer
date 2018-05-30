@@ -7,6 +7,7 @@ id: about-us
 permalink: /about
 ---
 
+
 # About Us
 
 <span class="kb-logo">kibibit</span> is an open source team of software developers, trying to make the world easier piece by piece.
