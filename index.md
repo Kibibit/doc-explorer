@@ -9,6 +9,7 @@ some general documentation for kibibt projects
 
 example of flowchart:
 
+
 {% mermaid %}
 graph TD;
     A-->B;
