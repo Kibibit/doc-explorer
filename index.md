@@ -9,7 +9,7 @@ some general documentation for kibibt projects
 
 example of flowchart:
 
-should only affect objects inside:
+should only affect objects inside: don'ttt!!!
 <div class="mermaid">
 graph LR
         A-->B
