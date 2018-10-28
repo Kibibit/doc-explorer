@@ -1,8 +1,5 @@
 remote_theme: Kibibit/bulma-theme
 name: kibibit doc explorer
-gems: [jekyll-mermaid]
 plugins:
    - jekyll
    - jekyll-spark
-mermaid:
-  src: 'assets/mermaid.js'
