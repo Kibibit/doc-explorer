@@ -1,3 +1,6 @@
+- title: "@kibibit/bit documentation"
+  url: /kibibit-bit
+  icon: fa-terminal
 - title: Run Achievibit Locally
   url: /achievibit-local
   icon: fa-flask
