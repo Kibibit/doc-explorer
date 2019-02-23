@@ -142,3 +142,49 @@ checkout master or develop branches. should use the configured branch names
 from `kibibit init` which should be located in `.kibibit` and `.git`.
 
 These branches should not allow direct commits (maybe later we'll allow it for admins based on github).
+
+## Some Technical recommendations
+
+Every function should return a promise so we can concatinate things like:
+
+```javascript
+kibibit.init('project name', 'github.user@gmail.com', /* createPackageFile */ true)
+.then(() => kibibit.feature('my-feature'))
+.then(() => kibibit.add('new-file.ts'))
+.then(() => kibibit.commit())
+```
+
+`kibibit.<function_name>` should allow passing variables to the library.
+
+Using promises will allow use to use the cli like so:
+
+```javascript
+function CLIFunctionInit(...params) {
+  return kibibit.init(...params)
+    .catch((err) => {
+      if (err.code === ALREADY_INITIALIZED) {
+        // deal with it!
+      }
+
+      if (err.code === NO_SIGNED_IN_USER) {
+        // deal with it!
+      }
+    });
+}
+
+```
+OR
+```javascript
+function CLIFunctionInit(...params) {
+  
+  return Promise.resolve()
+    .then(() => params.repoName || promptUserForRepoName(params))
+    .then(() => kibibit.init(...params));
+}
+
+function promptUserForRepoName(params) {
+  return prompt('please procide a name for this repo')
+    .then((response) => params.repoName = response);
+}
+
+```
