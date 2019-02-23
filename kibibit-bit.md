@@ -101,6 +101,14 @@ can also be initialized here:
 Should clone a git repository and also install all kibibit/bit tools (like hooks)
 and stuff. Also, update some `.git` config params based on the `.kibibit` file.
 
+A nice bonus feature might be to support forks. If a repo is a fork of another repo,
+Add the fork as `origin` remote, and the original repo as the `upstream` remote.
+
+Also, if you clone a repo of another user, the cli might suggest the user to fork
+it first.
+
+see [this as a reference](https://help.github.com/en/articles/fork-a-repo)
+
 ### Commit `kibibit commit`
 
 Should allow commits on all bracnehs besides `master` and `develop`.
@@ -142,6 +150,14 @@ checkout master or develop branches. should use the configured branch names
 from `kibibit init` which should be located in `.kibibit` and `.git`.
 
 These branches should not allow direct commits (maybe later we'll allow it for admins based on github).
+
+### Open-Souce `kibibit opensource`
+
+Check alignment with GitHub's [Community Profile](https://github.com/Kibibit/tdd1t/community)
+and help with generating some of those files
+
+Might be a bad name, we can change this to something else if we decide to include
+some more GitHub settings changes here.
 
 ## Some Technical recommendations
 
