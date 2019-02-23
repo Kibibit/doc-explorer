@@ -31,6 +31,14 @@ kibibit init
 # or bit init
 ```
 
+## Existing solutions and external documentation
+
+- https://github.com/nvie/gitflow (original gitflow extension)
+- https://datasift.github.io/gitflow/IntroducingGitFlow.html
+- https://datasift.github.io/gitflow/ (not maintained anymore)
+- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+- https://danielkummer.github.io/git-flow-cheatsheet/
+
 ## Some lessons learned from `tdd1t`
 
 Basically, two different flows can be used:
@@ -84,7 +92,7 @@ kibibit\bit should have an `init` command which will:
 Currently, we'll support `node` applications specifically. So, these `node` integrations
 can also be initialized here:
 
-- create a `package.json` with all the attributes we now (remote repo, name, etc.)
+- create a `package.json` with all the attributes we know (remote repo, name, etc.)
 - install [husky](https://github.com/typicode/husky) for git hooks
 - install `kibibit`'s git hooks (need to understand which one's we need :-))
 
