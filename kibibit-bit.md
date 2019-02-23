@@ -33,11 +33,11 @@ kibibit init
 
 ## Existing solutions and external documentation
 
-- https://github.com/nvie/gitflow (original gitflow extension)
-- https://datasift.github.io/gitflow/IntroducingGitFlow.html
-- https://datasift.github.io/gitflow/ (not maintained anymore)
-- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-- https://danielkummer.github.io/git-flow-cheatsheet/
+- [gitflow](https://github.com/nvie/gitflow) (original gitflow extension)
+- [Introducing GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
+- [HubFlow: Tool for gitflow and GitHub][https://datasift.github.io/gitflow/] (not maintained anymore)
+- [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [gitflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
 
 ## Some lessons learned from `tdd1t`
 
