@@ -183,7 +183,7 @@ function CLIFunctionInit(...params) {
 }
 
 function promptUserForRepoName(params) {
-  return prompt('please procide a name for this repo')
+  return prompt('please provide a name for this repo')
     .then((response) => params.repoName = response);
 }
 
