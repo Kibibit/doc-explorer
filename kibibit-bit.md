@@ -170,7 +170,13 @@ kibibit.init('project name', 'github.user@gmail.com', /* createPackageFile */ tr
 .then(() => kibibit.commit())
 ```
 
-`kibibit.<function_name>` should allow passing variables to the library.
+The only exception to this IMO is creating a new kibibit client:
+```javascript
+const kibibit = new Kibibit('<path_to_repo>');
+```
+Which will create a new kibibit object were you can use commands for the given path.
+
+`kibibit.<function_name>` should allow passing variables similar to the command line.
 
 Using promises will allow use to use the cli like so:
 
@@ -194,11 +200,15 @@ OR
 function CLIFunctionInit(...params) {
   
   return Promise.resolve()
-    .then(() => params.repoName || promptUserForRepoName(params))
+    .then(() => ensureRepoName(params))
     .then(() => kibibit.init(...params));
 }
 
-function promptUserForRepoName(params) {
+function ensureRepoName(params) {
+  if (params.repoName) {
+    return Promise.resolve();
+  }
+
   return prompt('please provide a name for this repo')
     .then((response) => params.repoName = response);
 }
