@@ -62,7 +62,7 @@ we just need to check that it supports configuration and if not, add it.
 Some things we need to consider while writing this:
 
 - Should be easily mainainable, preferrably with tests and such
-- Should work as a command line tool, and as a npm library
+- Should work as a command line tool, and as an npm library
   > We need to write functions that will corespond to specific cli commands
   > that can take the flow and work with it **without the extra command line question steps**.
 - Should save sensitive data in appropriate locations (like keychain)
@@ -151,7 +151,7 @@ from `kibibit init` which should be located in `.kibibit` and `.git`.
 
 These branches should not allow direct commits (maybe later we'll allow it for admins based on github).
 
-### Open-Souce `kibibit opensource`
+### Open-Source `kibibit opensource`
 
 Check alignment with GitHub's [Community Profile](https://github.com/Kibibit/tdd1t/community)
 and help with generating some of those files
